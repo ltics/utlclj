@@ -20,6 +20,14 @@
              (fn [x]
                (proc (proc (proc x))))))
 
+(def FOUR (fn [proc]
+             (fn [x]
+               (proc (proc (proc (proc x)))))))
+
+(def FIVE (fn [proc]
+             (fn [x]
+               (proc (proc (proc (proc (proc x))))))))
+
 ;;当然church numeral和一般的自然数也可以进行转换
 (defn to-integer
   [proc]
