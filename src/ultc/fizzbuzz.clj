@@ -43,3 +43,4 @@
 (map #(println (to-string %)) (to-vector solution))
 
 ;;done :)
+;;加入不使用clojure内建的def来对一些重复使用的lambda进行替换 那么上面的fizzbuzz代码会展开为一大坨嵌套的lambda 普通的人类根本无法看懂这样的代码
