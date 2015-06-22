@@ -105,3 +105,15 @@
 
 (def my-list ((MAP ((RANGE ONE) FIVE)) INCREMENT))
 (map to-integer (to-vector my-list))
+
+(def PUSH
+  (fn [l]
+    (fn [x]
+      (((FOLD l) ((UNSHIFT EMPTY) x)) UNSHIFT))))
+
+(map to-integer (to-vector (def my-list
+                             ((PUSH
+                                ((PUSH
+                                   ((PUSH EMPTY) THREE)) TWO)) ONE))))
+
+;;PUSH类似于conj UNSHIFT类似于cons 前者将元素放在容器的尾部 后者将元素放在容器的头部

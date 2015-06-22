@@ -173,3 +173,18 @@
 (to-integer ((MOD FIVE) THREE))
 (to-integer ((MOD ((POWER THREE) THREE)) ((ADD THREE) TWO)))
 ;;really cool right
+
+;;div操作可以理解为 m / n 就是m中最多有几个n
+
+(def DIV
+  (Z (fn [f]
+       (fn [m]
+         (fn [n]
+           (((IF ((IS_LESS_OR_EQUAL n) m))
+              (fn [x]
+                ((INCREMENT ((f ((SUBSTRACT m) n)) n)) x)))
+             ZERO))))))
+
+(to-integer ((DIV FIVE) THREE))
+(to-integer ((DIV ONE) THREE))
+(to-integer ((DIV FOUR) TWO))

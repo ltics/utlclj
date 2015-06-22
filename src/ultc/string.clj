@@ -1,7 +1,8 @@
 (ns ultc.string
   (:use [ultc.number]
         [ultc.numericalcomputation]
-        [ultc.list]))
+        [ultc.list]
+        [ultc.boolean]))
 
 ;;字符串只要表示成邱奇数的列表 然后建立好数字显示的字符的映射关系即可
 
@@ -35,3 +36,29 @@
 (to-string FIZZ)
 (to-string BUZZ)
 (to-string FIZZBUZZ)
+
+;;将一个数字转换为一个字符串
+
+(defn to-digis
+  [n]
+  (let [previous-digits (if (< n 10)
+                          []
+                          (to-digis (int (/ n 10))))]
+    (conj previous-digits (mod n 10))))
+
+(to-digis 125)
+
+(def TO_DIGITS
+  (Z (fn [f]
+       (fn [n]
+         ((PUSH (((IF ((IS_LESS_OR_EQUAL n) (DECREMENT TEN)))
+                   EMPTY)
+                  (fn [x]
+                    ((f ((DIV n) TEN)) x))))
+           ((MOD n) TEN))))))
+
+(map to-integer (to-vector (TO_DIGITS FIVE)))
+(map to-integer (to-vector (TO_DIGITS ((POWER FIVE) THREE))))
+
+(to-string (TO_DIGITS FIVE))
+(to-string (TO_DIGITS ((POWER FIVE) THREE)))
