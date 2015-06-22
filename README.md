@@ -1,3 +1,3 @@
 ## utlc
 
-ultc is fun just enjoy it :)
+utlc is fun just enjoy it :)
