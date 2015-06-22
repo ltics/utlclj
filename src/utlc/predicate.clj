@@ -1,6 +1,6 @@
-(ns ultc.predicate
-  (:use [ultc.boolean]
-        [ultc.number]))
+(ns utlc.predicate
+  (:use [utlc.boolean]
+        [utlc.number]))
 
 ;;zero?这个谓词用来检查一个数字是否是0 对于邱奇数同样可以构造这样的谓词
 

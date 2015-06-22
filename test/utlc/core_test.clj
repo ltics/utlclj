@@ -1,6 +1,6 @@
-(ns ultc.core-test
+(ns utlc.core-test
   (:require [clojure.test :refer :all]
-            [ultc.core :refer :all]))
+            [utlc.core :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."

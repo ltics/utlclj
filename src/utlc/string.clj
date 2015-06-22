@@ -1,8 +1,8 @@
-(ns ultc.string
-  (:use [ultc.number]
-        [ultc.numericalcomputation]
-        [ultc.list]
-        [ultc.boolean]))
+(ns utlc.string
+  (:use [utlc.number]
+        [utlc.numericalcomputation]
+        [utlc.list]
+        [utlc.boolean]))
 
 ;;字符串只要表示成邱奇数的列表 然后建立好数字显示的字符的映射关系即可
 

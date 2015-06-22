@@ -1,5 +1,5 @@
-(ns ultc.sortedpair
-  (:use [ultc.number]))
+(ns utlc.sortedpair
+  (:use [utlc.number]))
 
 ;;有序对
 

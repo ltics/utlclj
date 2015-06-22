@@ -1,12 +1,12 @@
-(ns ultc.fizzbuzz
-  (:use [ultc.number]
-        [ultc.list]
-        [ultc.string]
-        [ultc.boolean]
-        [ultc.predicate]
-        [ultc.numericalcomputation]))
+(ns utlc.fizzbuzz
+  (:use [utlc.number]
+        [utlc.list]
+        [utlc.string]
+        [utlc.boolean]
+        [utlc.predicate]
+        [utlc.numericalcomputation]))
 
-;;用已经实现了基础操作的ULTC来完成一个real world的任务 fizzbuzz
+;;用已经实现了基础操作的utlc来完成一个real world的任务 fizzbuzz
 
 ;;fizzbuzz in clojure
 
@@ -19,7 +19,7 @@
       :else (println (str n))))
   (range 1 101))
 
-;;fizzbuzz in ultc
+;;fizzbuzz in utlc
 
 (def FIFTEEN
   ((MULTIPLY THREE) FIVE))

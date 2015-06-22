@@ -1,4 +1,4 @@
-(ns ultc.prepare)
+(ns utlc.prepare)
 
 ;;programing with lambda
 ;;一个lambda就只是一个单参数的匿名函数 LC中的基础元素就是一个单参数的匿名函数 任何结构都由这些神奇的基础元素组成

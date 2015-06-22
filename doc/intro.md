@@ -1,3 +1,3 @@
-# Introduction to ultc
+# Introduction to utlc
 
 TODO: write [great documentation](http://jacobian.org/writing/what-to-write/)

@@ -1,4 +1,4 @@
-(ns ultc.number)
+(ns utlc.number)
 
 ;;在LC中可以只是用lambda来表示数字 叫做邱奇编码(church encoding)
 ;;使用church encoding表示的数为邱奇数(church numeral)

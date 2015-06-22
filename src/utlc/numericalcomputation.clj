@@ -1,8 +1,8 @@
-(ns ultc.numericalcomputation
-  (:use [ultc.number]
-        [ultc.sortedpair]
-        [ultc.predicate]
-        [ultc.boolean]))
+(ns utlc.numericalcomputation
+  (:use [utlc.number]
+        [utlc.sortedpair]
+        [utlc.predicate]
+        [utlc.boolean]))
 
 ;;now we have
 ;;numbers
@@ -96,11 +96,11 @@
 
 (less-or-equal? 1 3)
 
-;;可以下面的代码看到 对于现在的ULTC系统 是不存在负数的 如果一个小数减去一个大数 那么减到ZERO了之后 由于ZERO的定义中不会执行传入的proc 所以之后所有对ZERO的操作都会一直返回ZERO
+;;可以下面的代码看到 对于现在的utlc系统 是不存在负数的 如果一个小数减去一个大数 那么减到ZERO了之后 由于ZERO的定义中不会执行传入的proc 所以之后所有对ZERO的操作都会一直返回ZERO
 
 (to-integer (DECREMENT ZERO))
 
-;;所以只要判断m减去n的结果是不是0就可以在当前的ultc体系中判断是否是小于等于了
+;;所以只要判断m减去n的结果是不是0就可以在当前的utlc体系中判断是否是小于等于了
 
 (def IS_LESS_OR_EQUAL
   (fn [m]
@@ -142,7 +142,7 @@
 (to-integer ((MOD FIVE) TWO))
 (to-integer ((MOD FIVE) THREE))
 
-;;由于我们在定义MOD的时候用到了clojure内建的语法特性def 而在ULTC体系中是没有变量定义的 我们可以用著名的烧脑组合子Y-Combinator来处理匿名递归
+;;由于我们在定义MOD的时候用到了clojure内建的语法特性def 而在utlc体系中是没有变量定义的 我们可以用著名的烧脑组合子Y-Combinator来处理匿名递归
 
 (def Y
   (fn [f]

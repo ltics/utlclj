@@ -1,4 +1,4 @@
-(ns ultc.boolean)
+(ns utlc.boolean)
 
 ;;我们来从另一个角度理解一下布尔值的意义
 
