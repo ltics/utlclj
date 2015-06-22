@@ -43,7 +43,7 @@
 (to-boolean (IS_EMPTY my-list))
 (to-boolean (IS_EMPTY EMPTY))
 
-(defn to-array
+(defn to-vector
   [proc]
   (loop [proc proc
          array []]
@@ -51,18 +51,18 @@
       array
       (recur (REST proc) (conj array (FIRST proc))))))
 
-(map to-integer (to-array my-list))
+(map to-integer (to-vector my-list))
 
 ;;实现了list 我们来实现以下更加高级的range结构
 ;;实现一个proc 可以构建range范围内所有元素的列表
 
-(defn range
+(defn normal-range
   [m n]
   (if (<= m n)
     (cons m (range (inc m) n))
     []))
 
-(range 1 3)
+(normal-range 1 3)
 
 ;;有需要用到递归所以需要用到Y-comb
 
@@ -75,7 +75,7 @@
              EMPTY))))))
 
 (def my-range ((RANGE ONE) FIVE))
-(map to-integer (to-array my-range))
+(map to-integer (to-vector my-range))
 
 ;;先在要实现对list的map操作
 ;;首先实现fold操作来辅助实现map操作
@@ -104,4 +104,4 @@
             ((UNSHIFT l) (f x))))))))
 
 (def my-list ((MAP ((RANGE ONE) FIVE)) INCREMENT))
-(map to-integer (to-array my-list))
+(map to-integer (to-vector my-list))
