@@ -21,13 +21,13 @@
 
 (defn stream-take
   ([lst]
-    (stream-take lst nil))
+   (stream-take lst nil))
   ([lst count]
-    (if (or (to-boolean (IS_EMPTY lst)) (zero? count))
-      []
-      (cons (FIRST lst) (stream-take (REST lst) (if (nil? count)
-                                      count
-                                      (dec count)))))))
+   (if (or (to-boolean (IS_EMPTY lst)) (zero? count))
+     []
+     (cons (FIRST lst) (stream-take (REST lst) (if (nil? count)
+                                                 count
+                                                 (dec count)))))))
 
 (map to-integer (stream-take ZEROS 5))
 (map to-integer (stream-take ZEROS 10))

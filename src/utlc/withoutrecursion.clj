@@ -1,10 +1,10 @@
 (ns utlc.withoutrecursion
-  ("use" [utlc.number]
-        [utlc.boolean]
-        [utlc.list]
-        [utlc.sortedpair]
-        [utlc.withoutrecursion]
-        [utlc.numericalcomputation]))
+  (:use [utlc.number]
+         [utlc.boolean]
+         [utlc.list]
+         [utlc.sortedpair]
+         [utlc.withoutrecursion]
+         [utlc.numericalcomputation]))
 
 ;;由于理解Y-comb有一定的难度 有时候我们可以不用递归来进行一些操作 比如mod这个操作 只要n<=m 就不断从m中减去n 并且总是检查是否满足继续减的条件 我们无法知道需要执行几次 但是最多m次
 
@@ -22,10 +22,10 @@
   (fn [m]
     (fn [n]
       ((m (fn [x]
-             (((IF ((IS_LESS_OR_EQUAL n) x))
+            (((IF ((IS_LESS_OR_EQUAL n) x))
                ((SUBSTRACT x) n))
               x)))
-       m))))
+        m))))
 
 (to-integer ((NORECUR-MOD FIVE) TWO))
 (to-integer ((NORECUR-MOD ((POWER THREE) THREE)) ((ADD THREE) TWO)))
@@ -34,7 +34,7 @@
 ;;这个非递归的实现与递归实现的mod操作不是外延等价的 对于n为0的情况 两者返回值不同
 
 ;;(to-integer ((MOD THREE) ZERO)) ;;java.lang.StackOverflowError 无穷递归
-(to-integer ((NORECUR-MOD THREE) ZERO)) ;;3
+(to-integer ((NORECUR-MOD THREE) ZERO))                     ;;3
 
 ;;不使用递归实现range操作
 
@@ -50,19 +50,19 @@
 
 (map to-integer
      (to-vector
-      (LEFT (let [TEN ((MULTIPLY FIVE) TWO)]
-              (COUNTDOWN (COUNTDOWN (COUNTDOWN ((PAIR EMPTY) TEN))))))))
+       (LEFT (let [TEN ((MULTIPLY FIVE) TWO)]
+               (COUNTDOWN (COUNTDOWN (COUNTDOWN ((PAIR EMPTY) TEN))))))))
 
 (to-integer
- (RIGHT (let [TEN ((MULTIPLY FIVE) TWO)]
-          (COUNTDOWN (COUNTDOWN (COUNTDOWN ((PAIR EMPTY) TEN)))))))
+  (RIGHT (let [TEN ((MULTIPLY FIVE) TWO)]
+           (COUNTDOWN (COUNTDOWN (COUNTDOWN ((PAIR EMPTY) TEN)))))))
 
 (def NORECUR-RANGE
   (fn [m]
     (fn [n]
       (LEFT (((INCREMENT ((SUBSTRACT n) m))
-              COUNTDOWN)
-             ((PAIR EMPTY) n))))))
+               COUNTDOWN)
+              ((PAIR EMPTY) n))))))
 
 (let [TEN ((MULTIPLY FIVE) TWO)]
   (map to-integer (to-vector ((NORECUR-RANGE FIVE) TEN))))
