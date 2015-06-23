@@ -41,6 +41,22 @@
       (fn [y]
         ((b x) y)))))
 
+(def NOT
+  (fn [b]
+    (fn [x]
+      (fn [y]
+        ((b y) x)))))
+
+(def AND
+  (fn [m]
+    (fn [n]
+      ((m n) m))))
+
+(def OR
+  (fn [m]
+    (fn [n]
+      ((m m) n))))
+
 (((IF TRUE) "happy") "sad")
 (((IF FALSE) "happy") "sad")
 
@@ -52,3 +68,6 @@
 (((IF TRUE) "happy") "sad")
 (((IF FALSE) "happy") "sad")
 
+(to-boolean ((AND TRUE) FALSE))
+(to-boolean ((OR TRUE) FALSE))
+(to-boolean (NOT TRUE))
