@@ -24,3 +24,12 @@
 * or  = λm. λn. m m n
 * not = λm. λa. λb. m b a
 * if  = λm. λa. λb. m a b
+
+### church numeral in scheme
+
+```
+(define zero (lambda (f) (lambda (x) x)))
+
+(define (add_1 n)
+  (lambda (f) (lambda (x) (f ((n f) x)))))
+```

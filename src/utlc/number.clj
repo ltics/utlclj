@@ -4,9 +4,8 @@
 ;;使用church encoding表示的数为邱奇数(church numeral)
 
 ;;church numeral
-(def ZERO (fn [proc]
-            (fn [x]
-              x)))
+(def ZERO (fn [_]
+            (fn [x] x)))
 
 (def ONE (fn [proc]
            (fn [x]
